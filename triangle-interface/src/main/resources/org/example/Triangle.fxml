@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="871.0" prefWidth="1200.0" style="-fx-background-color: #ececec;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.TriangleController">
+                            <children>
+                                <ScrollPane fx:id="TrScrollPane" hbarPolicy="ALWAYS" hvalue="0.5" pannable="true" prefHeight="510.0" prefWidth="850.0" vbarPolicy="ALWAYS" vvalue="0.5">
+                                    <content>
+                                        <AnchorPane fx:id="TrianglePane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="510.0" prefWidth="850.0">
+                                            <children>
+                                                <Line fx:id="yAxis" endX="425.0" endY="510.0" startX="425.0" stroke="#979797" strokeWidth="2.0" />
+                                                <Line endX="850.0" endY="255.0" startY="255.0" stroke="#979797" strokeWidth="2.0" fx:id="xAxis" />
+                                                <Polygon fx:id="triangle1" fill="TRANSPARENT" points="425.0, 255.0, 725.0, 255.0, 510.0, 110.0" stroke="BLACK" strokeWidth="2.0" />
+                                                <Text fx:id="A_txt" layoutX="406.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="B_txt" layoutX="729.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="C_txt" layoutX="502.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="m_txt" layoutX="439.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="m">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="n_txt" layoutX="669.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="n">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="k_txt" layoutX="510.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="a_txt" layoutX="554.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="b_txt" layoutX="614.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="b">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text fx:id="c_txt" layoutX="444.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="c">
+                                                    <font>
+                                                        <Font size="25.0" />
+                                                    </font>
+                                                </Text>
+                                                <Group fx:id="MediansGr" autoSizeChildren="false" visible="false">
+                                                    <children>
+                                                        <Circle fx:id="M_point" centerX="553.3333333333334" centerY="206.66666666666666" fill="#ff9c9c" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="Ma_point" centerX="575.0" centerY="255.0" fill="RED" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="Mb_point" centerX="617.5" centerY="182.5" fill="RED" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="Mc_point" centerX="467.5" centerY="182.5" fill="RED" radius="3.0" stroke="BLACK" />
+                                                        <Text fx:id="M_txt" fill="#360000" layoutX="544.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="Ma_txt" fill="#360000" layoutX="564.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ma">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="Mb_txt" fill="#360000" layoutX="618.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mb">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="Mc_txt" fill="#360000" layoutX="436.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mc">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                    </children>
+                                                </Group>
+                                                <Group fx:id="BisectorsGr" autoSizeChildren="false" visible="false">
+                                                    <children>
+                                                        <Circle fx:id="L_point" centerX="529.3756567709587" centerY="195.19824592753585" fill="#fff700" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="La_point" centerX="542.9756816141328" centerY="255.0" fill="#ffbd00" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="Lb_point" centerX="587.2022659516064" centerY="162.06664447899033" fill="#ffbd00" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="Lc_point" centerX="470.59058176950026" centerY="177.22783109908778" fill="#ffbd00" radius="3.0" stroke="BLACK" />
+                                                        <Text fx:id="L_txt" fill="#654a00" layoutX="524.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="La_txt" fill="#654a00" layoutX="533.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="Lb_txt" fill="#654a00" layoutX="590.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lb">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="Lc_txt" fill="#654a00" layoutX="445.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lc">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                    </children>
+                                                </Group>
+                                                <Group fx:id="AltitudesGr" autoSizeChildren="false" visible="false">
+                                                    <children>
+                                                        <Circle fx:id="H_point" centerX="510.0" centerY="128.9655172413793" fill="#15ff00" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="Ha_point" centerX="510.0" centerY="255.0" fill="#0ba100" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="Hb_point" centerX="518.7918215613383" centerY="115.92936802973978" fill="#0ba100" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="Hc_point" centerX="501.72566371681415" centerY="124.11504424778761" fill="#0ba100" radius="3.0" stroke="BLACK" />
+                                                        <Text fx:id="H_txt" fill="#042c00" layoutX="503.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="Ha_txt" fill="#042c00" layoutX="498.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ha">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="Hc_txt" fill="#042c00" layoutX="473.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hc">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="Hb_txt" fill="#042c00" layoutX="522.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hb">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                    </children>
+                                                </Group>
+                                                <Group fx:id="CirclesPointsGr" autoSizeChildren="false" visible="false">
+                                                    <children>
+                                                        <Circle fx:id="InscribedCircle" centerX="529.3756567709587" centerY="195.19824592753585" fill="TRANSPARENT" radius="59.80175407246417" stroke="#3f5b75" />
+                                                        <Circle fx:id="SircumscribedCircle" centerX="575.0" centerY="245.51724137931035" fill="TRANSPARENT" radius="150.29944348219735" stroke="#633e73" />
+                        <Circle fx:id="o_point" centerX="529.3756567709587" centerY="195.19824592753585" fill="#95baff" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="O_point" centerX="575.0" centerY="245.51724137931035" fill="#9800ff" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="oa_point" centerX="529.3756567709587" centerY="255.0" fill="#0055ff" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="ob_point" centerX="562.8133093089739" centerY="145.61827837116846" fill="#0055ff" radius="3.0" stroke="BLACK" />
+                                                        <Circle fx:id="oc_point" centerX="477.7848049243645" centerY="164.95533277608408" fill="#0055ff" radius="3.0" stroke="BLACK" />
+                                                        <Text fx:id="O_txt" fill="#1f0036" layoutX="567.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                        <Text fx:id="o_txt" fill="#001640" layoutX="530.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="o">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                                                        <Text fx:id="oa_txt" fill="#001640" layoutX="518.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="oa">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="ob_txt" fill="#001640" layoutX="567.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ob">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                        <Text fx:id="oc_txt" fill="#001640" layoutX="448.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="oc">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Text>
+                                                    </children>
+                                                </Group>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </ScrollPane>
+                                <CheckBox fx:id="ShowM_chb" layoutX="20.0" layoutY="524.0" mnemonicParsing="false" onAction="#ShowM" text="Show medians points" />
+                                <CheckBox fx:id="ShowL_chb" layoutX="225.0" layoutY="524.0" mnemonicParsing="false" onAction="#ShowL" text="Show bisectors points" />
+                                <CheckBox fx:id="ShowH_chb" layoutX="438.0" layoutY="524.0" mnemonicParsing="false" onAction="#ShowH" text="Show altitudes points" />
+                                <CheckBox fx:id="ShowOo_chb" layoutX="645.0" layoutY="524.0" mnemonicParsing="false" onAction="#ShowOo" text="Show circles points" />
+                                <TextArea editable="false" layoutX="20.0" layoutY="583.0" prefHeight="270.0" prefWidth="425.0" text="Parameters:&#10;&#10;A(x1,y1), B(x2,y2), C(x3,y3) – vertices of the triangle with coordinates&#10;a, b, c – sides of the triangle&#10;m, n, k – angles of the triangle&#10;P – perimeter of the triangle&#10;S – area of ​​the triangle&#10;R – radius of the sircumscribed circle&#10;r – radius of the inscribed circle&#10;&#10;Additional parameters:&#10;&#10;M(x,y) – centroid (the point of intersection of the medians)&#10;Ma(x1,y1), Mb(x2,y2), Mc(x3,y3) – the midpoints of the sides a, b, c respectively&#10;&#10;L(x,y) – incenter (point of intersection of the bisectors)&#10;La(x1,y2), Lb(x2,y2), Lc(x3,y3) – the feet of the bisectors drawn to the sides a, b, c respectively&#10;&#10;H(x,y) – orthocenter (the point of intersection of the altitudes)&#10;Ha(x1,y1), Hb(x2,y2), Hc(x3,y3) – the feet of the altitudes drawn to the sides a, b, c respectively&#10;&#10;o(x,y) – the center of the inscribed circle&#10;oa(x1,y1), ob(x2,y2), oc(x3,y3) – the points of contact of the inscribed circle with the sides a, b, c respectively&#10;O(x,y) – the center of the sircumscribed circle" wrapText="true" />
+                                <Text layoutX="208.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Text>
+                                <TextArea fx:id="res1_txt" editable="false" layoutX="493.0" layoutY="582.0" prefHeight="270.0" prefWidth="425.0" wrapText="true">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </TextArea>
+                                <Text layoutX="679.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Text>
+                                <CheckBox fx:id="CalcAP_chb" layoutX="909.0" layoutY="394.0" mnemonicParsing="false" onAction="#CalcAP" text="Calculate all additional parameters">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="M_chb" layoutX="973.0" layoutY="431.0" mnemonicParsing="false" text="M, Ma, Mb, Mc">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="L_chb" layoutX="973.0" layoutY="471.0" mnemonicParsing="false" text="L, La, Lb, Lc">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="H_chb" layoutX="973.0" layoutY="511.0" mnemonicParsing="false" text="H, Ha, Hb, Hc">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="O_chb" layoutX="973.0" layoutY="551.0" mnemonicParsing="false" text="O">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="o_chb" layoutX="1024.0" layoutY="551.0" mnemonicParsing="false" text="o, oa, ob, oc">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </CheckBox>
+                                <Button layoutX="1017.0" layoutY="595.0" mnemonicParsing="false" onAction="#Calc" text="Calculate">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Button>
+                                <TextField fx:id="PTCString" layoutX="900.0" layoutY="291.0" prefHeight="25.0" prefWidth="272.0" promptText="a, b, c" text="S, P, r, R, a, b, c, m, n, k">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                                <Text layoutX="900.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parameters to calculate:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="NODPString" layoutX="1083.0" layoutY="331.0" prefHeight="25.0" prefWidth="89.0" promptText="0" text="2" />
+                                <Text layoutX="900.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of decimal places:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <Button fx:id="SwitchTrButton" layoutX="1017.0" layoutY="821.0" mnemonicParsing="false" onAction="#SwitchTr" text="Switch to sides/angles">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Button>
+                                <Pane fx:id="TrCoordsPane" layoutX="905.0" layoutY="31.0" prefHeight="213.0" prefWidth="238.0">
+                                    <children>
+                                        <TextField layoutX="64.0" layoutY="2.0" promptText="x" text="0" fx:id="xA" />
+                                        <TextField fx:id="yA" layoutX="64.0" layoutY="37.0" promptText="y" text="0" />
+                                        <Text layoutX="25.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+                                            <font>
+                                                <Font size="25.0" />
+                                            </font>
+                                        </Text>
+                                        <TextField layoutX="64.0" layoutY="77.0" promptText="x" text="300" fx:id="xB" />
+                                        <TextField fx:id="yB" layoutX="64.0" layoutY="112.0" promptText="y" text="0" />
+                                        <Text layoutX="25.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
+                                            <font>
+                                                <Font size="25.0" />
+                                            </font>
+                                        </Text>
+                                        <TextField layoutX="64.0" layoutY="152.0" promptText="x" text="85" fx:id="xC" />
+                                        <TextField fx:id="yC" layoutX="64.0" layoutY="187.0" promptText="y" text="145" />
+                                        <Text layoutX="25.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C">
+                                            <font>
+                                                <Font size="25.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="TrSAPane" disable="true" layoutX="900.0" layoutY="25.0" prefHeight="244.0" prefWidth="272.0" visible="false">
+                                    <children>
+                                        <TextField fx:id="TrInputStr" layoutY="179.0" prefHeight="25.0" prefWidth="272.0" promptText="String" text="m=1.040581; a=300; c=168.077363" />
+                                        <Text layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a string of at least three elements (sides/angles) divided by &quot;; &quot;." wrappingWidth="260.494140625">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Text>
+                                        <Text fill="#6b0000" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: Angle values ​​are written in radians." wrappingWidth="260.494140625">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </Pane>
