@@ -246,7 +246,7 @@
                                         <Font size="15.0" />
                                     </font>
                                 </Text>
-                                <TextField fx:id="NODPString" layoutX="1083.0" layoutY="415.0" prefHeight="25.0" prefWidth="89.0" promptText="0" text="2" />
+                                <TextField fx:id="NODPString" layoutX="1083.0" layoutY="415.0" prefHeight="25.0" prefWidth="89.0" promptText="0" text="4" />
                                 <Text layoutX="900.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of decimal places:">
                                     <font>
                                         <Font size="15.0" />

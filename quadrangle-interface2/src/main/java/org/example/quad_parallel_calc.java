@@ -47,10 +47,10 @@ public class quad_parallel_calc extends quad_calc{
                 s4 += "l=" + Double.toString(round(l*pow(10,k1))/pow(10,k1)) + "; ";
             }
             if (j.charAt(0) == 'R') {
-                s4 += "R=" + Double.toString(round(quad_get_R(k1)*pow(10,k1))/pow(10,k1)) + "; ";
+                s4 += "R=" + Double.toString(round(quad_get_R()*pow(10,k1))/pow(10,k1)) + "; ";
             }
             if (j.charAt(0) == 'r') {
-                s4 += "r=" + Double.toString(round(quad_get_r(k1)*pow(10,k1))/pow(10,k1)) + "; ";
+                s4 += "r=" + Double.toString(round(quad_get_r()*pow(10,k1))/pow(10,k1)) + "; ";
             }
             if (j.equals("d1")) {
                 s4 += "d1=" + Double.toString(round(quad_get_d1()*pow(10,k1))/pow(10,k1)) + "; ";
@@ -89,7 +89,7 @@ public class quad_parallel_calc extends quad_calc{
                 s4 += "O=" + Arrays.toString(round_val1(quad_get_O(k1), k1)) + "; ";
             }
             if (j.charAt(0) == 'o') {
-                s4 += "o=" + Arrays.toString(round_val1(quad_get_o(k1), k1)) + "; ";
+                s4 += "o=" + Arrays.toString(round_val1(quad_get_o(), k1)) + "; ";
             }
             if (j.equals("h1")) {
                 s4 += "h1=" + Double.toString(round(quad_parallel_get_h1()*pow(10,k1))/pow(10,k1)) + "; ";

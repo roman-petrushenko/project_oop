@@ -292,14 +292,14 @@ public class QuadrangleController {
             }
 
             double[] maxXArray = {Math.abs(A[0]), Math.abs(B[0]), Math.abs(C[0]), Math.abs(D[0])};
-            if (!Double.isNaN(quad.quad_get_R(nodp))&!Double.isNaN(quad.quad_get_O(nodp)[0])){
+            if (!Double.isNaN(quad.quad_get_R())&!Double.isNaN(quad.quad_get_O(nodp)[0])){
                 maxXArray = new double[] {Math.abs(A[0]), Math.abs(B[0]), Math.abs(C[0]), Math.abs(D[0]),
-                        quad.quad_get_R(nodp) * 2, Math.abs(quad.quad_get_O(nodp)[0])};
+                        quad.quad_get_R() * 2, Math.abs(quad.quad_get_O(nodp)[0])};
             }
             double[] maxYArray = {Math.abs(A[1]), Math.abs(B[1]), Math.abs(C[1]), Math.abs(D[1])};
-            if (!Double.isNaN(quad.quad_get_R(nodp))&!Double.isNaN(quad.quad_get_O(nodp)[1])){
+            if (!Double.isNaN(quad.quad_get_R())&!Double.isNaN(quad.quad_get_O(nodp)[1])){
                 maxYArray = new double[] {Math.abs(A[1]), Math.abs(B[1]), Math.abs(C[1]), Math.abs(D[1]),
-                        quad.quad_get_R(nodp) * 2, Math.abs(quad.quad_get_O(nodp)[1])};
+                        quad.quad_get_R() * 2, Math.abs(quad.quad_get_O(nodp)[1])};
             }
 
             double maxXAbs = Arrays.stream(maxXArray).max().getAsDouble();
@@ -316,14 +316,14 @@ public class QuadrangleController {
                 }
 
                 maxXArray = new double[]{Math.abs(A[0] / i), Math.abs(B[0] / i), Math.abs(C[0] / i), Math.abs(D[0]) / i};
-                if (!Double.isNaN(quad.quad_get_R(nodp))&!Double.isNaN(quad.quad_get_O(nodp)[0])){
+                if (!Double.isNaN(quad.quad_get_R())&!Double.isNaN(quad.quad_get_O(nodp)[0])){
                     maxXArray = new double[] {Math.abs(A[0] / i), Math.abs(B[0] / i), Math.abs(C[0] / i), Math.abs(D[0] / i),
-                            quad.quad_get_R(nodp) * 2 / i, Math.abs(quad.quad_get_O(nodp)[0] / i)};
+                            quad.quad_get_R() * 2 / i, Math.abs(quad.quad_get_O(nodp)[0] / i)};
                 }
                 maxYArray = new double[]{Math.abs(A[1] / i), Math.abs(B[1] / i), Math.abs(C[1] / i), Math.abs(D[1] / i)};
-                if (!Double.isNaN(quad.quad_get_R(nodp))&!Double.isNaN(quad.quad_get_O(nodp)[1])){
+                if (!Double.isNaN(quad.quad_get_R())&!Double.isNaN(quad.quad_get_O(nodp)[1])){
                     maxYArray = new double[] {Math.abs(A[1] / i), Math.abs(B[1] / i), Math.abs(C[1] / i), Math.abs(D[1] / i),
-                            quad.quad_get_R(nodp) * 2 / i, Math.abs(quad.quad_get_O(nodp)[1] / i)};
+                            quad.quad_get_R() * 2 / i, Math.abs(quad.quad_get_O(nodp)[1] / i)};
                 }
 
                 maxXAbs = Arrays.stream(maxXArray).max().getAsDouble();
@@ -397,20 +397,20 @@ public class QuadrangleController {
             O_txt.setLayoutX(O_point.getCenterX());
             O_txt.setLayoutY(O_point.getCenterY());
 
-            o_point.setCenterX(quad.quad_get_o(nodp)[0] / i);
-            o_point.setCenterY(-quad.quad_get_o(nodp)[1] / i);
+            o_point.setCenterX(quad.quad_get_o()[0] / i);
+            o_point.setCenterY(-quad.quad_get_o()[1] / i);
             o_txt.setLayoutX(o_point.getCenterX());
             o_txt.setLayoutY(o_point.getCenterY());
 
 
             //circles
-            InscribedCircle.setCenterX(quad.quad_get_o(nodp)[0] / i);
-            InscribedCircle.setCenterY(-quad.quad_get_o(nodp)[1] / i);
-            InscribedCircle.setRadius(quad.quad_get_r(nodp) / i);
+            InscribedCircle.setCenterX(quad.quad_get_o()[0] / i);
+            InscribedCircle.setCenterY(-quad.quad_get_o()[1] / i);
+            InscribedCircle.setRadius(quad.quad_get_r() / i);
 
             SircumscribedCircle.setCenterX(quad.quad_get_O(nodp)[0] / i);
             SircumscribedCircle.setCenterY(-quad.quad_get_O(nodp)[1] / i);
-            SircumscribedCircle.setRadius(quad.quad_get_R(nodp) / i);
+            SircumscribedCircle.setRadius(quad.quad_get_R() / i);
 
             //triangle sides/angles labels
             a_txt.setX((A[0] / i + B[0] / i)/2);

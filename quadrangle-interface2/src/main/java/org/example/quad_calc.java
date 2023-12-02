@@ -178,23 +178,23 @@ public class quad_calc implements quad_calc_interface {
     public double quad_get_P(){
         return P;
     }
-    public double quad_get_R(int k1){
-        if((round((m+k)*pow(10,k1))/pow(10,k1)==round(PI*pow(10,k1))/pow(10,k1))){
+    public double quad_get_R(){
+        if((round((m+k)*pow(10,2))/pow(10,2)==round(PI*pow(10,2))/pow(10,2))){
         return (quad_get_d2()/(2*Math.sin(m)));}
         else{
             return NaN;
         }
     }
-    public double quad_get_r(int k1){
-        if((round((a+c)*pow(10,k1))/pow(10,k1)==round((b+d)*pow(10,k1))/pow(10,k1))){
+    public double quad_get_r(){
+        if((round((a+c)*pow(10,2))/pow(10,2)==round((b+d)*pow(10,2))/pow(10,2))){
         return (2*quad_get_S()/quad_get_P());}
         else{
             return NaN;
         }
 
     }
-    public double[] quad_get_o(int k1){
-        if((round((a+c)*pow(10,k1))/pow(10,k1)==round((b+d)*pow(10,k1))/pow(10,k1))) {
+    public double[] quad_get_o(){
+        if((round((a+c)*pow(10,2))/pow(10,2)==round((b+d)*pow(10,2))/pow(10,2))) {
             double x1 = A[0];
             double y1 = A[1];
             double x2 = B[0];
@@ -203,11 +203,11 @@ public class quad_calc implements quad_calc_interface {
             double y3 = C[1];
             double x4 = D[0];
             double y4 = D[1];
-            double t1 = Math.atan((y2-y1)/(x2-x1));
+            double t1 = Math.atan((y2-y1)/(x2-x1))+Math.PI/2;
             double x_o = 0;
             double y_o = 0;
-            double g = Math.atan((y3-y2)/(x3-x2));
-            double f = Math.atan((y4-y1)/(x4-x1));
+            double g = Math.atan((y3-y2)/(x3-x2))+Math.PI/2;
+            double f = Math.atan((y4-y1)/(x4-x1))+Math.PI/2;
             double x_l1 = (y1 -y2 +x2*Math.tan((t1+g)/2) -x1*Math.tan((t1+f)/2))/(Math.tan((t1+g)/2) - Math.tan((t1+f)/2));
             double y_l1 = (x1 -x2 +y2/Math.tan((t1+g)/2) -y1/Math.tan((t1+f)/2))/(1/Math.tan((t1+g)/2) - 1/Math.tan((t1+f)/2));
             double x_l2 = (y1 -y2 +x2*Math.tan((t1+g)/2+Math.PI/2) -x1*Math.tan((t1+f)/2))/(Math.tan((t1+g)/2+Math.PI/2) - Math.tan((t1+f)/2));
@@ -216,70 +216,39 @@ public class quad_calc implements quad_calc_interface {
             double y_l3 = (x1 -x2 +y2/Math.tan((t1+g)/2+Math.PI/2) -y1/Math.tan((t1+f)/2+Math.PI/2))/(1/Math.tan((t1+g)/2+Math.PI/2) - 1/Math.tan((t1+f)/2+Math.PI/2));
             double x_l4 = (y1 -y2 +x2*Math.tan((t1+g)/2) -x1*Math.tan((t1+f)/2+Math.PI/2))/(Math.tan((t1+g)/2) - Math.tan((t1+f)/2+Math.PI/2));
             double y_l4 = (x1 -x2 +y2/Math.tan((t1+g)/2) -y1/Math.tan((t1+f)/2+Math.PI/2))/(1/Math.tan((t1+g)/2) - 1/Math.tan((t1+f)/2+Math.PI/2));
-            double r1 = Math.abs(-(y2-y1)*x_l1+(x2-x1)*y_l1+x1*(y2-y1)-y1*(x2-x1))/a;
-            double r2 = Math.abs(-(y2-y1)*x_l2+(x2-x1)*y_l2+x1*(y2-y1)-y1*(x2-x1))/a;
-            double r3 = Math.abs(-(y2-y1)*x_l3+(x2-x1)*y_l3+x1*(y2-y1)-y1*(x2-x1))/a;
-            double r4 = Math.abs(-(y2-y1)*x_l4+(x2-x1)*y_l4+x1*(y2-y1)-y1*(x2-x1))/a;
-            /*System.out.println(r1);
-            System.out.println(r2);
-            System.out.println(r3);
-            System.out.println(r4);
-            System.out.println(x_l4);
-            System.out.println(y_l4);
-            System.out.println(x_l1);
-            System.out.println(y_l1);
-            System.out.println(x_l2);
-            System.out.println(y_l2);
-            System.out.println(x_l3);
-            System.out.println(y_l3);
-            System.out.println(2*S/P);*/
-            /*if (Math.round(r1*Math.pow(10,10)/Math.pow(10,10))==Math.round(2*S/P*Math.pow(10,10)/Math.pow(10,10))) {
+            double r1_a = Math.abs(-(y2-y1)*x_l1+(x2-x1)*y_l1+x1*(y2-y1)-y1*(x2-x1))/a;
+            double r1_b = Math.abs(-(y3-y2)*x_l1+(x3-x2)*y_l1+x2*(y3-y2)-y2*(x3-x2))/b;
+            double r1_c = Math.abs(-(y4-y3)*x_l1+(x4-x3)*y_l1+x3*(y4-y3)-y3*(x4-x3))/c;
+            double r1_d = Math.abs(-(y1-y4)*x_l1+(x1-x4)*y_l1+x4*(y1-y4)-y4*(x1-x4))/d;
+            double r2_a = Math.abs(-(y2-y1)*x_l2+(x2-x1)*y_l2+x1*(y2-y1)-y1*(x2-x1))/a;
+            double r2_b = Math.abs(-(y3-y2)*x_l2+(x3-x2)*y_l2+x2*(y3-y2)-y2*(x3-x2))/b;
+            double r2_c = Math.abs(-(y4-y3)*x_l2+(x4-x3)*y_l2+x3*(y4-y3)-y3*(x4-x3))/c;
+            double r2_d = Math.abs(-(y1-y4)*x_l2+(x1-x4)*y_l2+x4*(y1-y4)-y4*(x1-x4))/d;
+            double r3_a = Math.abs(-(y2-y1)*x_l3+(x2-x1)*y_l3+x1*(y2-y1)-y1*(x2-x1))/a;
+            double r3_b = Math.abs(-(y3-y2)*x_l3+(x3-x2)*y_l3+x2*(y3-y2)-y2*(x3-x2))/b;
+            double r3_c = Math.abs(-(y4-y3)*x_l3+(x4-x3)*y_l3+x3*(y4-y3)-y3*(x4-x3))/c;
+            double r3_d = Math.abs(-(y1-y4)*x_l3+(x1-x4)*y_l3+x4*(y1-y4)-y4*(x1-x4))/d;
+            double r4_a = Math.abs(-(y2-y1)*x_l4+(x2-x1)*y_l4+x1*(y2-y1)-y1*(x2-x1))/a;
+            double r4_b = Math.abs(-(y3-y2)*x_l4+(x3-x2)*y_l4+x2*(y3-y2)-y2*(x3-x2))/b;
+            double r4_c = Math.abs(-(y4-y3)*x_l4+(x4-x3)*y_l4+x3*(y4-y3)-y3*(x4-x3))/c;
+            double r4_d = Math.abs(-(y1-y4)*x_l4+(x1-x4)*y_l4+x4*(y1-y4)-y4*(x1-x4))/d;
+            if (Math.round((0.5*r1_a*a +0.5*r1_b*b+0.5*r1_c*c+0.5*r1_d*d)*Math.pow(10,2))/Math.pow(10,2) == Math.round((S)*Math.pow(10,2))/Math.pow(10,2)) {
                 x_o = x_l1;
                 y_o = y_l1;
             }
-            else if (Math.round(r2*Math.pow(10,10)/Math.pow(10,10))==Math.round(2*S/P*Math.pow(10,10)/Math.pow(10,10))) {
+            else if (Math.round((0.5*r2_a*a +0.5*r2_b*b+0.5*r2_c*c+0.5*r2_d*d)*Math.pow(10,2))/Math.pow(10,2) == Math.round((S)*Math.pow(10,2))/Math.pow(10,2)) {
                 x_o = x_l2;
                 y_o = y_l2;
             }
-            else if (Math.round(r3*Math.pow(10,10)/Math.pow(10,10))==Math.round(2*S/P*Math.pow(10,10)/Math.pow(10,10))) {
+            else if (Math.round((0.5*r3_a*a +0.5*r3_b*b+0.5*r3_c*c+0.5*r3_d*d)*Math.pow(10,2))/Math.pow(10,2) == Math.round((S)*Math.pow(10,2))/Math.pow(10,2)) {
                 x_o = x_l3;
                 y_o = y_l3;
             }
-            else if (Math.round(r4*Math.pow(10,10)/Math.pow(10,10))==Math.round(2*S/P*Math.pow(10,10)/Math.pow(10,10))) {
-                x_o = x_l4;
-                y_o = y_l4;
-            }*/
-            double r = 2*S/P;
-            if ((Math.abs(r1-r) == Math.min(Math.min(Math.abs(r1-r),Math.abs(r2-r)),Math.min(Math.abs(r3-r),Math.abs(r4-r))))){
-                x_o = x_l1;
-                y_o = y_l1;
-            }
-            else if ((Math.abs(r2-r) == Math.min(Math.min(Math.abs(r1-r),Math.abs(r2-r)),Math.min(Math.abs(r3-r),Math.abs(r4-r))))) {
-                x_o = x_l2;
-                y_o = y_l2;
-            }
-            else if ((Math.abs(r3-r) == Math.min(Math.min(Math.abs(r1-r),Math.abs(r2-r)),Math.min(Math.abs(r3-r),Math.abs(r4-r))))) {
-                x_o = x_l3;
-                y_o = y_l3;
-            }
-            else if ((Math.abs(r4-r) == Math.min(Math.min(Math.abs(r1-r),Math.abs(r2-r)),Math.min(Math.abs(r3-r),Math.abs(r4-r))))) {
+            else if (Math.round((0.5*r4_a*a +0.5*r4_b*b+0.5*r4_c*c+0.5*r4_d*d)*Math.pow(10,2))/Math.pow(10,2) == Math.round((S)*Math.pow(10,2))/Math.pow(10,2)) {
                 x_o = x_l4;
                 y_o = y_l4;
             }
-           /* double x_o;
-            double y_o;
-            double t1 = Math.atan((y2 - y1) / (x2 - x1));
-            double g = Math.atan((y3 - y2) / (x3 - x2));
 
-            double f = Math.atan((y4 - y1) / (x4 - x1));
-            if (Math.tan((t1+g)/2)<0){
-                x_o = (y1 - y2 + x2 * Math.tan((t1 + g) / 2) - x1 * Math.tan((t1 + f) / 2)) / (Math.tan((t1 + g) / 2) - Math.tan((t1 + f) / 2));
-                y_o = (x1 - x2 + y2 / Math.tan((t1 + g) / 2) - y1 / Math.tan((t1 + f) / 2)) / (1 / Math.tan((t1 + g) / 2) - 1 / Math.tan((t1 + f) / 2));
-            }
-            else {
-                x_o = (y1 - y2 + x2 * Math.tan((t1 + g) / 2 + Math.PI / 2) - x1 * Math.tan((t1 + f) / 2)) / (Math.tan((t1 + g) / 2 + Math.PI / 2) - Math.tan((t1 + f) / 2));
-                y_o = (x1 - x2 + y2 / Math.tan((t1 + g) / 2 + Math.PI / 2) - y1 / Math.tan((t1 + f) / 2)) / (1 / Math.tan((t1 + g) / 2 + Math.PI / 2) - 1 / Math.tan((t1 + f) / 2));
-            }*/
 
             return new double[]{x_o, y_o};
         }
@@ -363,10 +332,10 @@ public class quad_calc implements quad_calc_interface {
                 s4 += "l=" + Double.toString(round(l*pow(10,k1))/pow(10,k1)) + "; ";
             }
             if (j.charAt(0) == 'R') {
-                s4 += "R=" + Double.toString(round(quad_get_R(k1)*pow(10,k1))/pow(10,k1)) + "; ";
+                s4 += "R=" + Double.toString(round(quad_get_R()*pow(10,k1))/pow(10,k1)) + "; ";
             }
             if (j.charAt(0) == 'r') {
-                s4 += "r=" + Double.toString(round(quad_get_r(k1)*pow(10,k1))/pow(10,k1)) + "; ";
+                s4 += "r=" + Double.toString(round(quad_get_r()*pow(10,k1))/pow(10,k1)) + "; ";
             }
             if (j.equals("d1")) {
                 s4 += "d1=" + Double.toString(round(quad_get_d1()*pow(10,k1))/pow(10,k1)) + "; ";
@@ -405,7 +374,7 @@ public class quad_calc implements quad_calc_interface {
                 s4 += "O=" + Arrays.toString(round_val1(quad_get_O(k1), k1)) + "; ";
             }
             if (j.charAt(0) == 'o') {
-                s4 += "o=" + Arrays.toString(round_val1(quad_get_o(k1), k1)) + "; ";
+                s4 += "o=" + Arrays.toString(round_val1(quad_get_o(), k1)) + "; ";
             }
 
 
