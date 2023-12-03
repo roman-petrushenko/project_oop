@@ -126,6 +126,26 @@ public class Circle {
         }
     }
 
+    public void removeChord(int index) {
+        if (index >= 0 && index < chords.size()) {
+            chords.remove(index);
+        } else {
+            System.out.println("Invalid chord index: " + index);
+        }
+    }
+
+    public void addChord(double x1, double y1, double x2, double y2) {
+        if (isOnCircle(x1, y1) && isOnCircle(x2, y2)) {
+            chords.add(new Chord(x1, y1, x2, y2));
+        } else {
+            System.out.println("Both points must be on the circle to form a chord.");
+        }
+    }
+
+    private boolean isOnCircle(double x, double y) {
+        return Math.pow(x - xCenter, 2) + Math.pow(y - yCenter, 2) == Math.pow(radius, 2);
+    }
+
     public class Chord {
         private double x1, y1;
         private double x2, y2;
