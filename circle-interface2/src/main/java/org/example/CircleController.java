@@ -144,7 +144,7 @@ public class CircleController {
     private Group SectorsGr;
 
     @FXML
-    private TextArea distText1;
+    private TextField distText1;
 
 
     @FXML
@@ -182,20 +182,26 @@ public class CircleController {
     @FXML
     void setPars1(ActionEvent event) {
         try {
+            EllipsePane.setPrefSize(750,750);
+
+            CircleGr.setLayoutX(375);
+            ChordsGr.setLayoutX(375);
+            SectorsGr.setLayoutX(375);
+
+            CircleGr.setLayoutY(375);
+            ChordsGr.setLayoutY(375);
+            SectorsGr.setLayoutY(375);
+
             double x;
             double y;
             double R;
             R = Double.parseDouble(radiusText.getText());
 
-//            if (centerXText.getText().isEmpty() & centerYText.getText().isEmpty()) {
-//                circle1 = circle1.createCircleWithNewRadius(R);
-//            } else {
                 x = Double.parseDouble(centerXText.getText());
                 y = Double.parseDouble(centerYText.getText());
                 circle1.setRadius(R);
                 circle1.setXCenter(x);
                 circle1.setYCenter(y);
-//            }
 
             double[] maxXArray = {Math.abs(circle1.getXCenter()), Math.abs(circle1.getRadius()*2)};
             double[] maxYArray = {Math.abs(circle1.getYCenter()), Math.abs(circle1.getRadius()*2)};
@@ -237,8 +243,14 @@ public class CircleController {
             }
 
             CircleOnPane.setCenterX(x/i);
-            CircleOnPane.setCenterX(y/i);
+            CircleOnPane.setCenterY(-y/i);
             CircleOnPane.setRadius(R/i);
+
+            CircleCenterOnPane.setCenterX(x/i);
+            CircleCenterOnPane.setCenterY(-y/i);
+
+            EllipseScrollPane.setHvalue(0.5);
+            EllipseScrollPane.setVvalue(0.5);
 
             CurCirclePars.setText(circle1.toString());
             exceptionText.setText("");
@@ -268,7 +280,7 @@ public class CircleController {
             ChordsList.getItems().clear();
             ChordsList.getItems().addAll(circle1.chords);
 
-            Line line = new Line(x1/i, y1/i, x2/i, y2/i);
+            Line line = new Line(x1/i, -y1/i, x2/i, -y2/i);
             line.setStroke(generateRandomColor(1));
 
             ChordsGr.getChildren().add(line);
@@ -291,7 +303,7 @@ public class CircleController {
             SectorsList.getItems().clear();
             SectorsList.getItems().addAll(circle1.sectors);
 
-            Arc sector1 = new Arc(circle1.getXCenter()/i, circle1.getYCenter()/i,
+            Arc sector1 = new Arc(circle1.getXCenter()/i, -circle1.getYCenter()/i,
                     circle1.getRadius(), circle1.getRadius(), 0, angle1);
             sector1.setType(ArcType.ROUND);
             sector1.setFill(generateRandomColor(0.25));
@@ -367,9 +379,9 @@ public class CircleController {
             Line chordToChange = (Line) ChordsGr.getChildren().get(chordInd);
 
             chordToChange.setStartX(x1/i);
-            chordToChange.setStartY(y1/i);
+            chordToChange.setStartY(-y1/i);
             chordToChange.setEndX(x2/i);
-            chordToChange.setEndY(y2/i);
+            chordToChange.setEndY(-y2/i);
 
             ChordsList.getItems().clear();
             ChordsList.getItems().addAll(circle1.chords);
@@ -392,7 +404,7 @@ public class CircleController {
             SectorsList.getItems().clear();
             SectorsList.getItems().addAll(circle1.sectors);
 
-            Arc sectorToChange = (Arc) SectorsGr.getChildren().get(sectorInd);
+            Arc sectorToChange = (Arc) SectorsGr.getChildren().get(sectorInd+1);
 
             sectorToChange.setLength(angle1);
 
