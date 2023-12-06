@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="871.0" prefWidth="1200.0" style="-fx-background-color: #ececec;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lmbk.squrcontroller.QuadrangleController">
+    <children>
+        <ScrollPane fx:id="QuadScrollPane" hbarPolicy="ALWAYS" hvalue="0.5" pannable="true" prefHeight="510.0" prefWidth="850.0" vbarPolicy="ALWAYS" vvalue="0.5">
+            <content>
+                <AnchorPane fx:id="QuadranglePane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="510.0" prefWidth="850.0">
+                    <children>
+                        <Line fx:id="yAxis" endX="425.0" endY="510.0" startX="425.0" stroke="#979797" strokeWidth="2.0" />
+                        <Line endX="850.0" endY="255.0" startY="255.0" stroke="#979797" strokeWidth="2.0" fx:id="xAxis" />
+                        <Group fx:id="QuadGr" layoutX="425.0" layoutY="255.0">
+                            <children>
+                                <Polygon fx:id="Quadrangle" fill="TRANSPARENT" points="100,0, 200,-100, 100,-200, 0,-100" stroke="BLACK" strokeWidth="2.0" />
+                                <Text fx:id="A_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="A" x="93.0" y="23.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="B_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="B" x="203.0" y="-95.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="C_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="C" x="92.0" y="-203.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="D_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="D" x="-20.0" y="-95.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="m_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="m" x="90.0" y="-10.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="n_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="n" x="175.0" y="-95.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="k_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="k" x="95.0" y="-175.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="l_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="l" x="10.0" y="-92.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="a_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="a" x="150.0" y="-38.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="b_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="b" x="150.0" y="-150.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="c_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="c" x="35.0" y="-149.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="d_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="d" x="30.0" y="-38.0">
+                                    <font>
+                                        <Font size="25.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Group>
+                        <Group fx:id="DiagonalsGr" layoutX="425.0" layoutY="255.0" visible="false">
+                            <children>
+                                <Line fx:id="d1" endX="100.0" endY="-200.0" startX="100.0" stroke="RED" />
+                                <Line fx:id="d2" endY="-100.0" startX="200.0" startY="-100.0" stroke="RED" />
+                                <Circle fx:id="G_point" centerX="100.0" centerY="-100.0" fill="RED" radius="3.0" stroke="BLACK" />
+                                <Text fx:id="G_txt" fill="#5b0000" layoutX="85.0" layoutY="-105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="d1_txt" fill="#5b0000" layoutX="101.0" layoutY="-145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d1">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="d2_txt" fill="#5b0000" layoutX="135.0" layoutY="-103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d2">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Group>
+                        <Group fx:id="OGr" layoutX="425.0" layoutY="255.0" visible="false">
+                            <children>
+                                <Circle fx:id="SircumscribedCircle" centerX="100.0" centerY="-100.0" fill="TRANSPARENT" radius="100.0" stroke="#7c00da" />
+                                <Circle fx:id="O_point" centerX="100.0" centerY="-100.0" fill="#7c00da" radius="3.0" stroke="BLACK" />
+                                <Text fx:id="O_txt" fill="#310057" layoutX="83.0" layoutY="-103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Group>
+                        <Group fx:id="oGr" layoutX="425.0" layoutY="255.0" visible="false">
+                            <children>
+                                <Circle fx:id="InscribedCircle" centerX="100.0" centerY="-100.0" fill="TRANSPARENT" radius="70.71067811865476" stroke="#0055ff" />
+                                <Circle fx:id="o_point" centerX="100.0" centerY="-100.0" fill="#0059ff" radius="3.0" stroke="BLACK" />
+                                <Text fx:id="o_txt" fill="#001b4d" layoutX="103.0" layoutY="-105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="o">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Group>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+        <Button layoutX="1000.0" layoutY="636.0" mnemonicParsing="false" onAction="#Calc" text="Calculate">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+        <CheckBox fx:id="Showd_chb" layoutX="20.0" layoutY="524.0" mnemonicParsing="false" onAction="#Showd" text="Show diagonals" />
+        <CheckBox fx:id="Showo_chb" layoutX="456.0" layoutY="524.0" mnemonicParsing="false" onAction="#Showo" text="Show inscribed circle" />
+        <CheckBox fx:id="ShowO_chb" layoutX="208.0" layoutY="524.0" mnemonicParsing="false" onAction="#ShowO" text="Show sircumscribed circle" />
+        <TextArea editable="false" layoutX="20.0" layoutY="583.0" prefHeight="270.0" prefWidth="425.0" text="Parameters:&#10;&#10;A(x1,y1), B(x2,y2), C(x3,y3), D(x4,y4) – vertices of the quadrangle with coordinates&#10;a, b, c, d – sides of the quadrangle&#10;m, n, k, l – angles of the quadrangle&#10;P – perimeter of the quadrangle&#10;S – area of ​​the quadrangle&#10;R – radius of the sircumscribed circle&#10;r – radius of the inscribed circle&#10;&#10;Additional parameters:&#10;&#10;d1=AC, d2=BD – diagonals&#10;G – the point of intersection of the diagonals&#10;t – the angle between the diagonals&#10;&#10;h1, h2 – the altitudes drawn to the sides a and b respectively&#10;&#10;o(x,y) – the center of the inscribed circle&#10;O(x,y) – the center of the sircumscribed circle" wrapText="true" />
+        <TextArea fx:id="res1_txt" editable="false" layoutX="493.0" layoutY="582.0" prefHeight="270.0" prefWidth="425.0" wrapText="true">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </TextArea>
+        <CheckBox fx:id="d_chb" layoutX="985.0" layoutY="517.0" mnemonicParsing="false" text="d1, d2, G, t">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="h_chb" layoutX="985.0" layoutY="557.0" mnemonicParsing="false" text="h1, h2">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="CalcAP_chb" layoutX="909.0" layoutY="478.0" mnemonicParsing="false" onAction="#CalcAP" text="Calculate all additional parameters">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="O_chb" layoutX="985.0" layoutY="597.0" mnemonicParsing="false" text="O">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </CheckBox>
+        <Button fx:id="SwitchQuadButton" layoutX="1013.0" layoutY="821.0" mnemonicParsing="false" onAction="#SwitchQuad" text="Switch to sides/angles">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+        <Text layoutX="208.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="679.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Pane fx:id="QuadCoordsPane" layoutX="905.0" layoutY="14.0" prefHeight="296.0" prefWidth="238.0">
+            <children>
+                <TextField layoutX="64.0" layoutY="2.0" promptText="x" text="100" fx:id="xA" />
+                <TextField fx:id="yA" layoutX="64.0" layoutY="37.0" promptText="y" text="0" />
+                <Text layoutX="25.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Text>
+                <TextField layoutX="64.0" layoutY="77.0" promptText="x" text="200" fx:id="xB" />
+                <TextField fx:id="yB" layoutX="64.0" layoutY="112.0" promptText="y" text="100" />
+                <Text layoutX="25.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Text>
+                <TextField layoutX="64.0" layoutY="152.0" promptText="x" text="100" fx:id="xC" />
+                <TextField fx:id="yC" layoutX="64.0" layoutY="187.0" promptText="y" text="200" />
+                <Text layoutX="25.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Text>
+                <TextField layoutX="64.0" layoutY="227.0" promptText="x" text="0" fx:id="xD" />
+                <TextField fx:id="yD" layoutX="64.0" layoutY="262.0" promptText="y" text="100" />
+                <Text layoutX="25.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane fx:id="QuadSAPane" disable="true" layoutX="877.0" layoutY="25.0" prefHeight="279.0" prefWidth="312.0" visible="false">
+            <children>
+                <TextField fx:id="QuadInputStr" layoutX="7.0" layoutY="245.0" prefHeight="25.0" prefWidth="305.0" promptText="String" text="a=141.421356; b=141.421356; d=141.421356; m=1.570796; n=1.570796" />
+                <Text layoutX="7.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set the values using one of these templates:                                         1) a!=0; b!=0; d!=0; m!=0; n!=0         2) a!=0; d!=0; m!=0; n!=0; l!=0        3) a!=0; b!=0; c!=0; d!=0; m!=0" wrappingWidth="320.0">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="#6b0000" layoutX="6.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: Angle values ​​are written in radians." wrappingWidth="260.494140625">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <CheckBox fx:id="isPar_chb" layoutX="973.0" layoutY="321.0" mnemonicParsing="false" onAction="#isPar" selected="true" text="Parallelogram">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </CheckBox>
+        <TextField fx:id="PTCString" layoutX="900.0" layoutY="375.0" prefHeight="25.0" prefWidth="272.0" promptText="a, b, c" text="S, P, a, b, c, d, m, n, k, l, r, R">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <Text layoutX="900.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parameters to calculate:">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+        <TextField fx:id="NODPString" layoutX="1083.0" layoutY="415.0" prefHeight="25.0" prefWidth="89.0" promptText="0" text="4" />
+        <Text layoutX="900.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of decimal places:">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+        <CheckBox fx:id="o_chb" layoutX="1039.0" layoutY="597.0" mnemonicParsing="false" text="o">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </CheckBox>
+      <Button fx:id="back_sq" layoutX="1157.0" layoutY="3.0" mnemonicParsing="false" onAction="#return_sq" prefHeight="42.0" prefWidth="39.0" text="&lt;-">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+    </children>
+</Pane>
