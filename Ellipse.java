@@ -79,7 +79,7 @@ public class Ellipse extends Circle {
         return new double[] {m, yIntercept};
     }
 
-    public double[][] getDirectrices() {
+    public double[] getDirectrices() {
         double a = getRadius();
         double b = minorRadius;
         double c = focalDistance();
@@ -88,8 +88,7 @@ public class Ellipse extends Circle {
         double directrixLeft = getXCenter() - directrixDistance;
         double directrixRight = getXCenter() + directrixDistance;
 
-        double arbitraryY = 1000;
-        return new double[][] { {directrixLeft, arbitraryY}, {directrixRight, arbitraryY} };
+        return new double[] {directrixLeft, directrixRight};
     }
 
     private List<Chord> chords = new ArrayList<>();
