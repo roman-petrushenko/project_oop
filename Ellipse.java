@@ -94,7 +94,20 @@ public class Ellipse extends Circle {
     private List<Chord> chords = new ArrayList<>();
 
     public void addChord(double x1, double y1, double x2, double y2) {
-        chords.add(new Chord(x1, y1, x2, y2));
+        if (isOnEllipse(x1, y1) && isOnEllipse(x2, y2)) {
+            chords.add(new Chord(x1, y1, x2, y2));
+        } else {
+            System.out.println("Both points must be on the ellipse to form a chord.");
+        }
+    }
+
+    private boolean isOnEllipse(double x, double y) {
+        double a = getRadius();
+        double b = minorRadius;
+        double xCenter = getXCenter();
+        double yCenter = getYCenter();
+
+        return Math.pow((x - xCenter) / a, 2) + Math.pow((y - yCenter) / b, 2) == 1;
     }
 
     public void removeChord(int index) {
@@ -106,14 +119,18 @@ public class Ellipse extends Circle {
     }
 
     public void updateChord(int index, double x1, double y1, double x2, double y2) {
-        if (index >= 0 && index < chords.size()) {
-            Chord chord = chords.get(index);
-            chord.setX1(x1);
-            chord.setY1(y1);
-            chord.setX2(x2);
-            chord.setY2(y2);
+        if (isOnEllipse(x1, y1) && isOnEllipse(x2, y2)) {
+            if (index >= 0 && index < chords.size()) {
+                Chord chord = chords.get(index);
+                chord.setX1(x1);
+                chord.setY1(y1);
+                chord.setX2(x2);
+                chord.setY2(y2);
+            } else {
+                System.out.println("Invalid chord index");
+            }
         } else {
-            System.out.println("Invalid chord index");
+            System.out.println("Both points must be on the ellipse to form a valid chord.");
         }
     }
 
