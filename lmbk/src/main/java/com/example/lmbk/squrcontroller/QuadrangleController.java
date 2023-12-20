@@ -1,5 +1,7 @@
 package com.example.lmbk.squrcontroller;
 
+import com.example.lmbk.squrcontroller.quad_calc;
+import com.example.lmbk.squrcontroller.quad_parallel_calc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;

@@ -23,7 +23,7 @@ public class quad_calc implements quad_calc_interface {
     protected double S;
     protected double P;
 
-    quad_calc(String s1){
+    public quad_calc(String s1){
         String[] s2 = s1.split("; ");
         for (String i: s2){
             if (i.charAt(0)=='a'){

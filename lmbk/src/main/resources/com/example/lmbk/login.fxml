@@ -38,5 +38,10 @@
             <Font size="55.0" />
          </font>
       </Label>
+      <Button fx:id="ReglogButton1" alignment="CENTER" contentDisplay="CENTER" layoutX="223.0" layoutY="719.0" mnemonicParsing="false" onAction="#Reg_lg" prefHeight="51.0" prefWidth="757.0" text="Login" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -27,7 +27,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 
 @SpringBootApplication
 public class HelloApplication extends Application {
@@ -71,6 +72,7 @@ public class HelloApplication extends Application {
     @FXML
     private Button close;
 
+
     @FXML
     private Button tr;
 
@@ -83,11 +85,117 @@ public class HelloApplication extends Application {
     @FXML
     private AnchorPane str;
 
+    @FXML
+    private PasswordField pr;
+
+
+    @FXML
+    private TextField User_lgTextField;
+
+    @FXML
+    private Button close_lg;
+
+    @FXML
+    private Button LoginButton;
+
+    @FXML
+    private Button ReglogButton1;
+
 
     @FXML
     public void Reg(ActionEvent event) throws IOException {
-        new sceneswtch(str, "menu.fxml");
+        String enteredPassword = password.getText();
+        String enteredUsername = UserTextField.getText();
+        String enteredEmail = EmailTextField.getText();
 
+        if (!enteredPassword.isEmpty() && !enteredUsername.isEmpty() && !enteredEmail.isEmpty()) {
+            File file = new File("userdata.txt");
+
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Error creating userdata.txt");
+                    return;
+                }
+            }
+
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
+
+                writer.write(enteredUsername + "," + enteredPassword + "," + enteredEmail);
+                writer.newLine();
+
+                System.out.println("Registration successful");
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("Error writing to userdata.txt");
+            }
+        } else {
+            System.out.println("Please fill in all fields");
+        }
+
+        //new sceneswtch(str, "menu.fxml");
+
+    }
+
+
+
+    @FXML
+    public void log(ActionEvent event) throws IOException{
+        String enteredPassword = pr.getText();
+        String enteredUsername = User_lgTextField.getText();
+
+        if (!enteredPassword.isEmpty() && !enteredUsername.isEmpty()) {
+            File file = new File("userdata.txt");
+
+            if (!file.exists()) {
+                System.out.println("No registered users yet");
+                return;
+            }
+
+            try (Scanner scanner = new Scanner(file)) {
+                boolean found = false;
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    String[] parts = line.split(",");
+                    String username = parts[0];
+                    String password = parts[1];
+
+                    if (enteredUsername.equals(username) && enteredPassword.equals(password)) {
+                        System.out.println("Login successful");
+                        found = true;
+                        new sceneswtch(str, "menu.fxml");//reframe to menu
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    System.out.println("Invalid login credentials");
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                System.out.println("Error creating userdata.txt");
+            }
+        } else {
+            System.out.println("Please fill in all fields");
+        }
+
+
+    }
+
+    @FXML
+    public void close_l(ActionEvent event){
+        LoginButton.getScene().getWindow().hide();
+
+    }
+
+
+
+    @FXML
+    public void Reg_lg(ActionEvent event) throws IOException {
+
+        new sceneswtch(str, "lg.fxml");
     }
 
     @FXML
