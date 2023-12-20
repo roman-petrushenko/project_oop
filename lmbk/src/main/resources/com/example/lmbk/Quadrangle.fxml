@@ -257,10 +257,10 @@
                 <Font size="15.0" />
             </font>
         </CheckBox>
-      <Button fx:id="back_sq" layoutX="1157.0" layoutY="3.0" mnemonicParsing="false" onAction="#return_sq" prefHeight="42.0" prefWidth="39.0" text="&lt;-">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
+        <Button fx:id="back_sq" layoutX="1157.0" layoutY="3.0" mnemonicParsing="false" onAction="#return_sq" prefHeight="42.0" prefWidth="39.0" text="&lt;-">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
     </children>
 </Pane>

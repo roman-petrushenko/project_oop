@@ -5,22 +5,22 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="sceneAnchoremenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="871.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lmbk.HelloApplication">
-   <children>
-      <Button fx:id="sq" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="377.0" mnemonicParsing="false" onAction="#open_sq" prefHeight="117.0" prefWidth="801.0" text="Square">
-         <font>
-            <Font size="55.0" />
-         </font>
-      </Button>
-      <Button fx:id="tr" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="132.0" mnemonicParsing="false" onAction="#open_tr" prefHeight="117.0" prefWidth="801.0" text="Triangle">
-         <font>
-            <Font size="55.0" />
-         </font>
-      </Button>
-      <Button fx:id="cr" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="617.0" mnemonicParsing="false" onAction="#open_cr" prefHeight="117.0" prefWidth="801.0" text="Circle">
-         <font>
-            <Font size="55.0" />
-         </font>
-      </Button>
-      <Button fx:id="close_mn" layoutX="1036.0" layoutY="809.0" mnemonicParsing="false" onAction="#close_mnfg" prefHeight="39.0" prefWidth="150.0" text="Close" />
-   </children>
+    <children>
+        <Button fx:id="sq" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="377.0" mnemonicParsing="false" onAction="#open_sq" prefHeight="117.0" prefWidth="801.0" text="Square">
+            <font>
+                <Font size="55.0" />
+            </font>
+        </Button>
+        <Button fx:id="tr" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="132.0" mnemonicParsing="false" onAction="#open_tr" prefHeight="117.0" prefWidth="801.0" text="Triangle">
+            <font>
+                <Font size="55.0" />
+            </font>
+        </Button>
+        <Button fx:id="cr" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="617.0" mnemonicParsing="false" onAction="#open_cr" prefHeight="117.0" prefWidth="801.0" text="Circle">
+            <font>
+                <Font size="55.0" />
+            </font>
+        </Button>
+        <Button fx:id="close_mn" layoutX="1036.0" layoutY="809.0" mnemonicParsing="false" onAction="#close_mnfg" prefHeight="39.0" prefWidth="150.0" text="Close" />
+    </children>
 </AnchorPane>

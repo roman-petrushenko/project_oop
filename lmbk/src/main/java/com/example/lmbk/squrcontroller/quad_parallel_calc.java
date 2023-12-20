@@ -1,11 +1,13 @@
 package com.example.lmbk.squrcontroller;
 
+import com.example.lmbk.squrcontroller.quad_calc;
+
 import java.util.Arrays;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.round;
 
-public class quad_parallel_calc extends quad_calc{
+public class quad_parallel_calc extends quad_calc {
 
 
     quad_parallel_calc(double[] A1, double[] B1, double[] C1, double[] D1) {
