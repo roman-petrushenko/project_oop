@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="871.0" prefWidth="1200.0" style="-fx-background-color: #ececec;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ParabolaHyperbolaController">
+                            <children>
+      <TextField fx:id="vertexText" editable="false" layoutX="265.0" layoutY="142.0" prefHeight="31.0" prefWidth="251.0" promptText="(x, y)">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="focusText" editable="false" layoutX="265.0" layoutY="209.0" prefHeight="31.0" prefWidth="251.0" promptText="(x, y)">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Button layoutX="117.0" layoutY="135.0" mnemonicParsing="false" onAction="#getVert" text="Get vertex">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="117.0" layoutY="202.0" mnemonicParsing="false" onAction="#getFoc" text="Get focus">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="117.0" layoutY="267.0" mnemonicParsing="false" onAction="#getDir" text="Get directrix">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <TextField fx:id="dirText" editable="false" layoutX="265.0" layoutY="274.0" prefHeight="31.0" prefWidth="251.0" promptText="(A, B, C)">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Button layoutX="209.0" layoutY="326.0" mnemonicParsing="false" onAction="#getAOS" text="Get axis of symmetry">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <TextField fx:id="AOSText" editable="false" layoutX="185.0" layoutY="376.0" prefHeight="31.0" prefWidth="251.0" promptText="(A, B, C)">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Button layoutX="226.0" layoutY="430.0" mnemonicParsing="false" onAction="#getLR" text="Get Latus Rectum">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <TextField fx:id="LRText" editable="false" layoutX="190.0" layoutY="480.0" prefHeight="31.0" prefWidth="251.0" promptText="((x1, y1), (x2, y2))">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Button layoutX="116.0" layoutY="540.0" mnemonicParsing="false" onAction="#getTgLine" text="Get tangent line at point">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <TextField fx:id="tgLineX" layoutX="371.0" layoutY="547.0" prefHeight="25.0" prefWidth="73.0" promptText="x">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="aText" layoutX="161.0" layoutY="771.0" prefHeight="25.0" prefWidth="40.0" promptText="a" text="0.2" />
+      <TextField fx:id="bText" layoutX="232.0" layoutY="771.0" prefHeight="25.0" prefWidth="40.0" promptText="b" text="0" />
+      <Text layoutX="144.0" layoutY="792.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="216.0" layoutY="792.0" strokeType="OUTSIDE" strokeWidth="0.0" text="b">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="22.0" layoutY="792.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coefficients:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="474.0" layoutY="769.0" mnemonicParsing="false" onAction="#setPars" text="Set parameters">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="exceptionText" editable="false" layoutX="783.0" layoutY="786.0" prefHeight="63.0" prefWidth="395.0" promptText="Exception" style="-fx-text-fill: red;" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
+      <TextField fx:id="CurParPars" editable="false" layoutX="28.0" layoutY="818.0" prefHeight="30.0" prefWidth="550.0" promptText="Current parabola parameters" text="y = 0.2x^2 + 0.0x + 0.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tgLineY" layoutX="457.0" layoutY="547.0" prefHeight="25.0" prefWidth="73.0" promptText="y">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tgLineText" editable="false" layoutX="190.0" layoutY="591.0" prefHeight="31.0" prefWidth="251.0" promptText="(A, B, C)">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text fill="#575757" layoutX="117.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line equation (for directrix, axis of symmetry, tangent line): Ax + By + C = 0" wrappingWidth="400.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="cText" layoutX="303.0" layoutY="770.0" prefHeight="25.0" prefWidth="40.0" promptText="c" text="0" />
+      <Text layoutX="287.0" layoutY="791.0" strokeType="OUTSIDE" strokeWidth="0.0" text="c">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="isVert" layoutX="367.0" layoutY="770.0" mnemonicParsing="false" selected="true" text="Vertical">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="116.0" layoutY="639.0" mnemonicParsing="false" onAction="#getY1" text="Get y(x1)">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField layoutX="237.0" layoutY="646.0" prefHeight="25.0" prefWidth="73.0" promptText="x1" fx:id="x1Field">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="y_x1" editable="false" layoutX="403.0" layoutY="646.0" prefHeight="25.0" prefWidth="73.0" promptText="y(x1)">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text layoutX="328.0" layoutY="668.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button layoutX="116.0" layoutY="698.0" mnemonicParsing="false" onAction="#getX1" text="Get x(y1)">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="y1Field" layoutX="237.0" layoutY="705.0" prefHeight="25.0" prefWidth="73.0" promptText="y1">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField editable="false" layoutX="403.0" layoutY="705.0" prefHeight="25.0" prefWidth="73.0" promptText="x(y1)" fx:id="x_y1">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text layoutX="328.0" layoutY="727.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fociText" editable="false" layoutX="912.0" layoutY="79.0" prefHeight="31.0" prefWidth="251.0" promptText="((x1, y1), (x2, y2))">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="ALText" editable="false" layoutX="912.0" layoutY="137.0" prefHeight="31.0" prefWidth="251.0" promptText="(transverse, conjugate)">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="709.0" layoutY="72.0" mnemonicParsing="false" onAction="#getFoci" text="Get foci">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="709.0" layoutY="130.0" mnemonicParsing="false" onAction="#getAL" text="Get axes lenghts">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="709.0" layoutY="250.0" mnemonicParsing="false" onAction="#getAE" text="Get axis endpoints">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="AEText" editable="false" layoutX="912.0" layoutY="257.0" prefHeight="31.0" prefWidth="251.0" promptText="((x1, y1), (x2, y2))">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="709.0" layoutY="310.0" mnemonicParsing="false" onAction="#getAsy" text="Get asymptotes">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="asyText" editable="false" layoutX="912.0" layoutY="317.0" prefHeight="31.0" prefWidth="251.0" promptText="(coeff1, coeff2)">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="709.0" layoutY="370.0" mnemonicParsing="false" onAction="#getVertices" text="Get vertices">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="verticesText" editable="false" layoutX="912.0" layoutY="377.0" prefHeight="31.0" prefWidth="251.0" promptText="((x1, y1), (x2, y2))">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="709.0" layoutY="430.0" mnemonicParsing="false" onAction="#getTgLine1" text="Get tangent line at point">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tgLineX1" layoutX="988.0" layoutY="437.0" prefHeight="25.0" prefWidth="73.0" promptText="x">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="hText" layoutX="799.0" layoutY="703.0" prefHeight="25.0" prefWidth="40.0" promptText="a" text="1" />
+      <TextField fx:id="kText" layoutX="870.0" layoutY="703.0" prefHeight="25.0" prefWidth="40.0" promptText="b" text="2" />
+      <Text layoutX="782.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="854.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="659.0" layoutY="721.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parameters:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="1067.0" layoutY="699.0" mnemonicParsing="false" onAction="#setPars1" text="Set parameters">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="HypEq" editable="false" layoutX="659.0" layoutY="744.0" prefHeight="30.0" prefWidth="511.0" promptText="Hyperbola equation" text="(y-2.0)^2/1.0^2 - (x-1.0)^2/0.5^2 = 1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tgLineY1" layoutX="1074.0" layoutY="437.0" prefHeight="25.0" prefWidth="73.0" promptText="y">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tgLineText1" editable="false" layoutX="809.0" layoutY="485.0" prefHeight="31.0" prefWidth="251.0" promptText="(m, c)">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="aText1" layoutX="941.0" layoutY="702.0" prefHeight="25.0" prefWidth="40.0" promptText="c" text="0.5" />
+      <Text layoutX="925.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="710.0" layoutY="525.0" mnemonicParsing="false" onAction="#getEcc" text="Get eccentricity">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="eccText" editable="false" layoutX="961.0" layoutY="532.0" prefHeight="31.0" prefWidth="171.0" promptText="eccentricity">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="792.0" layoutY="600.0" mnemonicParsing="false" onAction="#getConjHyp" text="Get conjugate hyperbola">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="bText1" layoutX="1015.0" layoutY="703.0" prefHeight="25.0" prefWidth="40.0" promptText="c" text="1" />
+      <Text layoutX="999.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" text="b">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#575757" layoutX="741.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(h,k) - center; a and b - axis lengths" wrappingWidth="400.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="223.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PARABOLA">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="849.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HYPERBOLA">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button layoutX="709.0" layoutY="190.0" mnemonicParsing="false" onAction="#getFD" text="Get focal distance">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="FDText" editable="false" layoutX="961.0" layoutY="197.0" prefHeight="31.0" prefWidth="171.0" promptText="focal distance">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+                            </children>
+                        </Pane>

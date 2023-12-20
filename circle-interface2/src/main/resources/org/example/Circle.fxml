@@ -69,7 +69,7 @@
       <Button layoutX="849.0" layoutY="333.0" mnemonicParsing="false" onAction="#RemoveChord" text="Remove chord" />
       <ListView fx:id="SectorsList" layoutX="773.0" layoutY="556.0" prefHeight="102.0" prefWidth="242.0" />
       <Button layoutX="1065.0" layoutY="607.0" mnemonicParsing="false" onAction="#AddSector" text="Add sector" />
-      <TextField fx:id="ASA" layoutX="1071.0" layoutY="567.0" prefHeight="25.0" prefWidth="59.0" promptText="angle" />
+      <TextField fx:id="ASA" layoutX="1065.0" layoutY="567.0" prefHeight="25.0" prefWidth="73.0" promptText="angle (rad)" />
       <Text layoutX="869.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sectors">
          <font>
             <Font size="15.0" />
@@ -78,7 +78,7 @@
       <Button layoutX="873.0" layoutY="707.0" mnemonicParsing="false" onAction="#UpdSector" text="Update sector" />
       <TextField fx:id="USnewA" layoutX="996.0" layoutY="707.0" prefHeight="25.0" prefWidth="73.0" promptText="new angle" />
       <Button layoutX="837.0" layoutY="749.0" mnemonicParsing="false" onAction="#calcSectorArea" text="Calculate sector area" />
-      <TextField fx:id="sectorAreaText" layoutX="997.0" layoutY="749.0" prefHeight="25.0" prefWidth="111.0" promptText="area" />
+      <TextField fx:id="sectorAreaText" editable="false" layoutX="997.0" layoutY="749.0" prefHeight="25.0" prefWidth="111.0" promptText="area" />
       <Button layoutX="846.0" layoutY="658.0" mnemonicParsing="false" onAction="#RemoveSector" text="Remove sector" />
       <TextField fx:id="centerXText" layoutX="260.0" layoutY="773.0" prefHeight="25.0" prefWidth="59.0" promptText="x" text="0" />
       <TextField fx:id="centerYText" layoutX="350.0" layoutY="773.0" prefHeight="25.0" prefWidth="59.0" promptText="y" text="0" />
@@ -113,7 +113,7 @@
             <Font size="20.0" />
          </font>
       </TextArea>
-      <TextField fx:id="CurCirclePars" layoutX="35.0" layoutY="817.0" prefHeight="25.0" prefWidth="679.0" promptText="Current circle parameters" text="Circle[Radius: 200.0, Center: (0.0, 0.0)]">
+      <TextField fx:id="CurCirclePars" editable="false" layoutX="35.0" layoutY="817.0" prefHeight="25.0" prefWidth="679.0" promptText="Current circle parameters" text="Circle[Radius: 200.0, Center: (0.0, 0.0)]">
          <font>
             <Font size="14.0" />
          </font>
