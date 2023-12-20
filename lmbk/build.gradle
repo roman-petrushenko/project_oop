@@ -1,0 +1,94 @@
+plugins {
+  id 'java'
+  id 'application'
+  id 'org.javamodularity.moduleplugin' version '1.8.12'
+  id 'org.openjfx.javafxplugin' version '0.0.13'
+  id 'org.beryx.jlink' version '2.25.0'
+  id 'org.springframework.boot' version '3.2.0'
+  id 'io.spring.dependency-management' version '1.1.4'
+  id 'jacoco'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  junitVersion = '5.9.2'
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.withType(JavaCompile) {
+  options.encoding = 'UTF-8'
+}
+
+application {
+  mainModule = 'com.example.lmbk'
+  mainClass = 'com.example.lmbk.HelloApplication'
+}
+
+javafx {
+  version = '17.0.6'
+  modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  implementation 'org.slf4j:slf4j-api:1.7.32' // Adjust version as needed
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  compileOnly 'org.projectlombok:lombok'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  annotationProcessor 'org.projectlombok:lombok'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'io.projectreactor:reactor-test'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
+  //implementation group: 'org.hibernate.orm', name: 'hibernate-core', version: '6.3.1.Final'
+
+  implementation('org.controlsfx:controlsfx:11.1.2')
+  implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
+    exclude(group: 'org.openjfx')
+//  implementation('org.assertj.core:assertj-core:11.6.0') {
+//     exclude group: 'org.json', module: 'jsonassert' // Exclude jsonassert
+//    }
+  }
+
+  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+}
+
+test {
+  useJUnitPlatform()
+  finalizedBy jacocoTestReport
+}
+
+jacoco{
+  toolVersion = "0.8.5"
+  reportsDirectory = file("$buildDir/customJacocoReportDir")
+}
+
+jlink {
+  imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
+  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+  launcher {
+    name = 'app'
+  }
+}
+
+jlinkZip {
+  group = 'distribution'
+}
+
+jacocoTestReport{
+  dependsOn test
+  reports{
+
+    html.destination file("${buildDir}/jacocoHtml")
+  }
+}
