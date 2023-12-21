@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="ElPane" prefHeight="871.0" prefWidth="1200.0" style="-fx-background-color: #ececec;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lmbk.ellipsecontroller.EllipseController">
+    <children>
+        <TextArea fx:id="exceptionText" editable="false" layoutX="780.0" layoutY="780.0" prefHeight="74.0" prefWidth="395.0" promptText="Exception" style="-fx-text-fill: red;" wrapText="true">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </TextArea>
+        <ScrollPane fx:id="EllipseScrollPane" hbarPolicy="ALWAYS" hvalue="0.5" pannable="true" prefHeight="750.0" prefWidth="750.0" vbarPolicy="ALWAYS" vvalue="0.5">
+            <content>
+                <AnchorPane fx:id="EllipsePane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="750.0" prefWidth="750.0">
+                    <children>
+                        <Line fx:id="yAxis" endX="375.0" endY="750.0" startX="375.0" stroke="#979797" strokeWidth="2.0" />
+                        <Line endX="750.0" endY="375.0" startY="375.0" stroke="#979797" strokeWidth="2.0" fx:id="xAxis" />
+                        <Group fx:id="EllipseGr" layoutX="375.0" layoutY="375.0">
+                            <children>
+                                <Circle fx:id="EllipseCenterOnPane" fill="#aa00ff" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+                                <Ellipse fx:id="EllipseOnPane" fill="TRANSPARENT" radiusX="200.0" radiusY="100.0" stroke="BLACK" strokeType="INSIDE" />
+                            </children>
+                        </Group>
+                        <Group fx:id="EllipseGr1" layoutX="375.0" layoutY="375.0">
+                            <children>
+                                <Line fx:id="LOS1" endY="100.0" startY="-100.0" stroke="RED" visible="false" />
+                                <Line fx:id="LOS2" endX="200.0" startX="-200.0" stroke="RED" visible="false" />
+                                <Line fx:id="dirL" endX="-230.9401076758503" startX="-230.9401076758503" startY="-1000.0" stroke="#008a09" visible="false" />
+                                <Line fx:id="dirR" endX="230.9401076758503" startX="230.9401076758503" startY="-1000.0" stroke="#008a09" visible="false" />
+                                <Circle fx:id="foci1" centerX="-173.20508075688772" fill="DODGERBLUE" radius="3.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                                <Circle fx:id="foci2" centerX="173.20508075688772" fill="DODGERBLUE" radius="3.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                            </children></Group>
+                        <Group fx:id="ChordsGr" layoutX="375.0" layoutY="375.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+        <ListView fx:id="ChordsList" layoutX="780.0" layoutY="510.0" prefHeight="102.0" prefWidth="242.0" />
+        <TextField fx:id="areaText" editable="false" layoutX="1039.0" layoutY="44.0" prefHeight="25.0" prefWidth="120.0" promptText="area" />
+        <TextField fx:id="circumferenceText" editable="false" layoutX="1039.0" layoutY="86.0" prefHeight="25.0" prefWidth="120.0" promptText="circumference" />
+        <Button layoutX="808.0" layoutY="44.0" mnemonicParsing="false" onAction="#calcArea" text="Calculate the area of the ellipse" />
+        <Button layoutX="778.0" layoutY="86.0" mnemonicParsing="false" onAction="#calcCircumference" text="Calculate the circumference of the ellipse" />
+        <Button layoutX="835.0" layoutY="128.0" mnemonicParsing="false" onAction="#TLAP" text="Tangent line at point" />
+        <TextField fx:id="TLAPx" layoutX="990.0" layoutY="128.0" prefHeight="25.0" prefWidth="59.0" promptText="x" />
+        <TextField fx:id="TLAPy" layoutX="1057.0" layoutY="128.0" prefHeight="25.0" prefWidth="59.0" promptText="y" />
+        <TextField fx:id="TLAPText" editable="false" layoutX="876.0" layoutY="167.0" prefHeight="25.0" prefWidth="202.0" promptText="[m, yIntercept]" />
+        <Button layoutX="1072.0" layoutY="583.0" mnemonicParsing="false" onAction="#AddChord" text="Add chord" />
+        <TextField fx:id="ACx1" layoutX="1049.0" layoutY="515.0" prefHeight="25.0" prefWidth="59.0" promptText="x1" />
+        <TextField fx:id="ACy1" layoutX="1116.0" layoutY="515.0" prefHeight="25.0" prefWidth="59.0" promptText="y1" />
+        <TextField fx:id="ACx2" layoutX="1050.0" layoutY="549.0" prefHeight="25.0" prefWidth="59.0" promptText="x2" />
+        <TextField fx:id="ACy2" layoutX="1116.0" layoutY="549.0" prefHeight="25.0" prefWidth="59.0" promptText="y2" />
+        <Text layoutX="877.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chords">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+        <Button layoutX="779.0" layoutY="661.0" mnemonicParsing="false" onAction="#UpdChord" text="Update chord" />
+        <TextField fx:id="UCx1" layoutX="902.0" layoutY="661.0" prefHeight="25.0" prefWidth="59.0" promptText="x1" />
+        <TextField fx:id="UCy1" layoutX="967.0" layoutY="661.0" prefHeight="25.0" prefWidth="59.0" promptText="y1" />
+        <TextField fx:id="UCx2" layoutX="1044.0" layoutY="661.0" prefHeight="25.0" prefWidth="59.0" promptText="x2" />
+        <TextField fx:id="UCy2" layoutX="1111.0" layoutY="661.0" prefHeight="25.0" prefWidth="59.0" promptText="y2" />
+        <Button layoutX="830.0" layoutY="234.0" mnemonicParsing="false" onAction="#calcFocalDistance" text="Calculate focal distance" />
+        <TextField fx:id="focalDistText" editable="false" layoutX="1004.0" layoutY="234.0" prefHeight="25.0" prefWidth="120.0" promptText="distance" />
+        <Button layoutX="836.0" layoutY="277.0" mnemonicParsing="false" onAction="#calcEccentricity" text="Calculate eccentricity" />
+        <Button layoutX="856.0" layoutY="612.0" mnemonicParsing="false" onAction="#RemoveChord" text="Remove chord" />
+        <Button layoutX="852.0" layoutY="319.0" mnemonicParsing="false" onAction="#getFoci" text="Get foci" />
+        <TextField fx:id="fociText" editable="false" layoutX="947.0" layoutY="319.0" prefHeight="25.0" prefWidth="155.0" promptText="foci" />
+        <TextField fx:id="centerXText" layoutX="331.0" layoutY="757.0" prefHeight="25.0" prefWidth="59.0" promptText="x" text="0" />
+        <TextField fx:id="centerYText" layoutX="421.0" layoutY="757.0" prefHeight="25.0" prefWidth="59.0" promptText="y" text="0" />
+        <TextField fx:id="majorRadiusText" layoutX="210.0" layoutY="797.0" prefHeight="25.0" prefWidth="59.0" promptText="R" text="200" />
+        <Text layoutX="314.0" layoutY="775.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="404.0" layoutY="775.0" strokeType="OUTSIDE" strokeWidth="0.0" text="y">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="87.0" layoutY="815.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Major Radius">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="87.0" layoutY="776.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Center coordinates">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Button layoutX="552.0" layoutY="767.0" mnemonicParsing="false" onAction="#setPars" text="Set parameters">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+        <TextField fx:id="CurEllipsePars" editable="false" layoutX="40.0" layoutY="830.0" prefHeight="25.0" prefWidth="679.0" text="Ellipse[Major Radius: 200, Minor Radius: 100, Center: (0, 0)]">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="eccText" editable="false" layoutX="999.0" layoutY="277.0" prefHeight="25.0" prefWidth="120.0" promptText="eccentricity" />
+        <Button layoutX="798.0" layoutY="360.0" mnemonicParsing="false" onAction="#getLinesOfSymmetry" text="Get lines of symmetry" />
+        <TextField fx:id="LOSText" editable="false" layoutX="967.0" layoutY="360.0" prefHeight="25.0" prefWidth="211.0" promptText="[vertical line, horizontal line]" />
+        <Button layoutX="767.0" layoutY="401.0" mnemonicParsing="false" onAction="#getDirectrices" text="Get directrices" />
+        <TextField fx:id="dirText" editable="false" layoutX="890.0" layoutY="401.0" prefHeight="25.0" prefWidth="297.0" promptText="[ [directrixLeft, arbitraryY], [directrixRight, arbitraryY] ]" />
+        <TextField fx:id="minorRadiusText" layoutX="421.0" layoutY="796.0" prefHeight="25.0" prefWidth="59.0" promptText="R" text="100" />
+        <Text layoutX="300.0" layoutY="814.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minor radius">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+      <Button fx:id="back_el" layoutX="1157.0" layoutY="3.0" mnemonicParsing="false" onAction="#return_el" prefHeight="42.0" prefWidth="39.0" text="&lt;-">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+    </children>
+</Pane>
